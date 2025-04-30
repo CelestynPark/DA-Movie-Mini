@@ -45,6 +45,7 @@ def merge_all(movies, credits, keywords, links):
 
     df = movies.merge(credits, on='id', how='left')
     df = df.merge(credits, on='id', how='left')
+    df = df.merge(keywords, on='id', how='left')
     df = df.merge(links, left_on='id', right_on='tmdbId', how='left')
 
     return df
